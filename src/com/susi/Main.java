@@ -1,6 +1,7 @@
 package com.susi;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 public class Main {
@@ -44,7 +45,61 @@ public class Main {
         System.out.println(now);
         System.out.println(now.getMonth());
 
+        int a = 10;
+        int b = a;
+        a = 100;
+        System.out.println("a = " + a + " - b = " + b);
 
+        Person alex = new Person ("alex");
+        Person mariam = alex;
+
+        System.out.println("before changing alex");
+        System.out.println(alex.name + " " + mariam.name);
+
+        mariam.name = "Mariam";
+
+
+        System.out.println("after changing alex");
+        System.out.println(alex.name + " " +  mariam.name);
+
+        int zero = 0;
+        int one = 1;
+        int subscriberCount = 1_000_000;
+
+        System.out.println(name);
+        System.out.println(name.toUpperCase());
+        System.out.println(name.toLowerCase());
+        System.out.println(name.charAt(0));
+        String ana = "ana";
+        System.out.println(name.contains(ana));
+        System.out.println(name.equals(ana));
+
+        Date newDate = new Date();
+        LocalDate newLocalDate = LocalDate.now();
+        LocalDateTime newLocalDateTime = LocalDateTime.now();
+
+        System.out.println(newDate);
+        System.out.println(newLocalDate);
+        System.out.println(newLocalDateTime);
+
+        int ten = 10;
+        int two = 2;
+        int addition = ten + two;
+
+        System.out.println(addition);
+        System.out.println(10 + 2 + 90);
+        System.out.println(10 - 2);
+        System.out.println(10 * 2 + 7);
+        System.out.println(10 % 3);
+
+    }
+
+    static class Person {
+        String name;
+
+        Person (String name) {
+            this.name = name;
+        }
     }
 
 }
