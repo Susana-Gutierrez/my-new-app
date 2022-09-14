@@ -180,6 +180,70 @@ public class Main {
         System.out.println(Arrays.toString(arrayNames));
         System.out.println(arrayNames.length);
 
+        // Arrays and indexes
+
+        int [] num = {2, 0, 1, 4, 100, 48, 71};
+        int oneHundred = num[4];
+        int four = num[3];
+        int lastIndex = num[num.length - 1];
+        System.out.println(oneHundred);
+        System.out.println(four);
+        System.out.println(lastIndex);
+
+        int newNum = 0;
+        newNum++;
+        System.out.println(newNum);
+        newNum--;
+        System.out.println(newNum);
+
+        for (int i = 0; i < num.length; i++) {
+            System.out.println(i + ": " + num[i]);
+        }
+
+        for (int i = num.length - 1; i >= 0; i--) {
+            System.out.println(i + ": " + num[i]);
+        }
+
+        //Enhanced for loop
+
+        System.out.println("Enhanced for loop");
+
+        for (int n : num ) {
+            System.out.println(n);
+        }
+
+        Arrays.stream(num).forEach(System.out::println);
+
+        String[] loopName = {"Ana", "Ali", "Bob", "Mike"};
+        for (String s : loopName) {
+            if (s.equals("Bob")) {
+                break;
+            }
+            System.out.println(s);
+        }
+
+        for (String s : loopName) {
+            if (s.startsWith("A")) {
+                continue;
+            }
+            System.out.println(s);
+        }
+
+        int count = 0;
+
+        while (count <= 20) {
+            System.out.println("count " + count);
+            count++;
+        }
+
+        do {
+            System.out.println(count);
+            count++;
+        }
+        while (count <= 20);
+
+
+
     }
 
     static class Person {
