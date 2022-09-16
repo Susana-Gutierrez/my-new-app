@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.Scanner;
 
 public class Main {
 
@@ -242,6 +243,67 @@ public class Main {
         }
         while (count <= 20);
 
+        // Scanner
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("What is your name?");
+        String userName = scanner.nextLine();
+        System.out.println("Hello " + userName);
+        System.out.println("How old are you?");
+        int newAge = scanner.nextInt();
+        int year = LocalDate.now().minusYears(newAge).getYear();
+        System.out.println("You were born in " + year);
+
+        if (newAge < 18) {
+            System.out.println("and you are not an adult");
+        } else {
+            System.out.println("and you are an adult");
+        }
+        System.out.println("Hello");
+        String newBrand = "Samsung";
+        System.out.println(newBrand.toUpperCase());
+        boolean startsWithS = newBrand.startsWith("S");
+        System.out.println(startsWithS);
+
+
+        char [] letters = {'A', 'A', 'B', 'C', 'D', 'D', 'D'};
+        int countOcc = countOccurrences(letters, 'D');
+        System.out.println(countOcc);
+
+        Lens lensOne = new Lens("sony", "85mm", true);
+
+        Lens lensTwo = new Lens("sony", "30mm", true);
+
+        System.out.println("Lens 1");
+        System.out.println(lensOne.lensBrand);
+        System.out.println(lensOne.focalLength);
+        System.out.println(lensOne.isPrime);
+        System.out.println("===========");
+        System.out.println("Lens 2");
+        System.out.println(lensTwo.lensBrand);
+        System.out.println(lensTwo.focalLength);
+        System.out.println(lensTwo.isPrime);
+        System.out.println("===========");
+
+        Passport ukPassport = new Passport("1234", LocalDate.of(2025, 1, 20), "England");
+        Passport usPassport = new Passport("3334", LocalDate.of(2030, 2, 3), "United States");
+
+        System.out.println("ukPassport");
+        System.out.println(ukPassport.number);
+        System.out.println(ukPassport.expiryDate);
+        System.out.println(ukPassport.country);
+        System.out.println("===========");
+        System.out.println("usPassport");
+        System.out.println(usPassport.number);
+        System.out.println(usPassport.expiryDate);
+        System.out.println(usPassport.country);
+
+
+
+
+
+
+
 
 
     }
@@ -251,6 +313,47 @@ public class Main {
 
         Person (String name) {
             this.name = name;
+        }
+    }
+
+    public static int countOccurrences(char [] letters, char searchLetter) {
+
+        int count = 0;
+        System.out.println(letters);
+        System.out.println(searchLetter);
+
+        for (char letter: letters) {
+            if (letter == searchLetter) {
+                count++;
+            }
+        }
+
+        return count;
+    }
+
+    static class Lens{
+        String lensBrand;
+        String focalLength;
+        boolean isPrime;
+
+        Lens (String lensBrand, String focalLength, boolean isPrime){
+            this.lensBrand = lensBrand;
+            this.focalLength = focalLength;
+            this.isPrime = isPrime;
+
+
+
+        }
+    }
+
+    static class Passport {
+        String number;
+        LocalDate expiryDate;
+        String country;
+        Passport(String number, LocalDate expiryDate, String country) {
+            this.number = number;
+            this.expiryDate = expiryDate;
+            this.country = country;
         }
     }
 
